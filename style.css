@@ -1,0 +1,679 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0d0d0d;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Particle Background (unchanged) */
+#particle-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('background.png') repeat;
+    z-index: -1;
+    opacity: 0.15;
+    animation: scrollEffect 10s linear infinite;
+}
+
+@keyframes scrollEffect {
+    100% {
+        background-position: 0 1000px;
+    }
+}
+
+/* Navbar Styling */
+.navbar {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around; /* Ensure even spacing between items */
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+/* Each Navbar Item */
+.navbar ul li {
+    display: flex;
+    flex-direction: column; /* Stack the icon and text vertically */
+    align-items: center;
+}
+
+/* Navbar Images */
+.nav-img {
+    width: 40px; /* Adjust the size of the icons */
+    height: auto;
+    margin-bottom: 8px; /* Add space between the icon and the text */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hover Effect on Navbar Images */
+.nav-img:hover {
+    transform: scale(1.2);   /* Slightly enlarge the image on hover */
+    opacity: 0.8;
+}
+
+/* Text Underneath Each Icon */
+.nav-text {
+    font-size: 14px; /* Size of the text under the icon */
+    color: #fff;     /* White text color */
+    text-transform: uppercase; /* Make text all uppercase */
+    letter-spacing: 1px; /* Add some spacing between letters */
+    font-weight: 600;     /* Slightly bold the text */
+}
+
+/* Ensure enough space between the navbar items */
+.navbar ul li {
+    margin: 0 20px; /* Space between the nav items */
+}
+/* Tooltip for icons */
+.nav-icon::before {
+    content: attr(title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.nav-icon:hover::before {
+    opacity: 1;
+}
+
+/* Main Content */
+.main-content {
+    text-align: center;
+    margin-top: 350px;
+    z-index: 1;
+    position: relative;
+}
+
+/* Floating Coin Animation */
+.floating-coin {
+    width: 180px;
+    animation: floating 6s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 20px #00ffcc);
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+/* Headline with minimized shadow */
+.headline {
+    font-size: 64px;
+    font-family: 'Orbitron', sans-serif;
+    margin-top: 20px;
+    margin-bottom: 20px; /* Space between headline and paragraph */
+    color: #f50057;
+}
+
+/* Neon text with reduced shadow */
+.neon-text {
+    color: #f50057;
+    text-shadow: 0 0 5px #f50057, 0 0 10px #ff4081, 0 0 0px #ff80ab; /* Reduced glow effect */
+}
+
+/* Subtext with space below */
+.sub-text {
+    font-size: 24px;
+    margin-top: 15px;
+    margin-bottom: 60px; /* Space between paragraph and button */
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.8;
+	font-family: 'Arial', 'Helvetica', sans-serif;
+    color: #fff;
+	
+	
+}
+
+/* Call to Action Button */
+.cta-button {
+    margin-top: 0; /* Adjusted space above the button */
+    padding: 15px 40px;
+    font-size: 22px;
+    color: #fff;
+    background: #f50057;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(245, 0, 87, 0.7);
+    transition: all 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+    background: #ff80ab;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 128, 171, 0.8), 0 0 40px rgba(255, 128, 171, 1);
+}
+
+/* Modal Styling (Hidden by Default) */
+.modal {
+    display: none; /* Initially hide the modal */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s;
+}
+
+/* Modal Content Styling */
+.modal-content {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 800px;
+    position: relative;
+    box-shadow: 0 0 20px rgba(255, 0, 102, 0.4);
+    animation: zoomIn 0.5s;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.6);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Modal Styling (Hidden by Default) */
+.modal {
+    display: none; /* Modal is hidden initially */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 20px;
+    width: 90%;                /* Adjust modal content width */
+    max-width: 800px;           /* Limit the width on larger screens */
+    height: 80%;                /* Adjust modal content height */
+    max-height: 80%;            /* Ensure it doesn't go beyond screen size */
+    position: relative;
+    box-shadow: 0 0 20px rgba(255, 0, 102, 0.4);
+    overflow: hidden;           /* Ensure content fits inside modal */
+}
+
+/* Ensure iframe fills the modal content area */
+.modal-content iframe {
+    width: 100%;               /* Make the iframe take the full width */
+    height: 100%;              /* Make the iframe take the full height */
+    border-radius: 10px;        /* Optional: Rounded corners for iframe */
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+}
+
+
+/* Tokenomics Section Styling */
+.tokenomics-section {
+    text-align: center;
+    padding: 60px 0;
+    background-color: #0d0d0d;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.tokenomics-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #f50057;
+    text-shadow: 0 0 10px #f50057, 0 0 20px #ff4081;
+}
+
+/* Circle Chart Container */
+.circle-chart-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+/* Center info inside the circle */
+.center-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.center-info .total-supply {
+    font-size: 28px;
+    color: #ffeb3b;
+}
+
+.center-info p {
+    font-size: 16px;
+    color: #fff;
+}
+
+/* Tokenomics Details */
+.tokenomics-details ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+}
+
+.tokenomics-details li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* Dots for the details */
+.dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.liquidity { background-color: #00ffcc; }
+.team { background-color: #ff80ab; }
+.marketing { background-color: #ff4081; }
+.airdrop { background-color: #ffeb3b; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .circle-chart-container {
+        width: 220px;
+        height: 220px;
+    }
+
+    .center-info .total-supply {
+        font-size: 24px;
+    }
+
+    .center-info p {
+        font-size: 14px;
+    }
+}
+
+/* How to Buy Section */
+#Buy {
+    padding: 80px 0;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    background: none; /* Ensures the particle background shows */
+	
+    margin-bottom: 50px;
+}
+
+
+
+/* Buy Steps Container */
+.buy-steps-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual Buy Step (Card) */
+.buy-step {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    width: 300px; /* Adjust width for cards */
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.buy-step:hover {
+    transform: scale(1.05); /* Scale up slightly on hover */
+    box-shadow: 0 10px 25px rgba(245, 0, 87, 0.6), 0 0 50px rgba(255, 128, 171, 0.9); /* Neon hover effect */
+}
+
+/* Icons in Steps */
+.buy-step .icon {
+    font-size: 50px;
+    color: #ffeb3b;
+    margin-bottom: 20px;
+}
+
+.buy-step h3 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.buy-step p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+}
+
+/* Buy Buttons */
+.buy-button {
+    background-color: #f50057;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 0 20px rgba(245, 0, 87, 0.7);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #ff80ab;
+    box-shadow: 0 0 30px rgba(255, 128, 171, 0.9);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .buy-steps-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .buy-step {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+}
+
+/* Solana Icon Styling (Yellow like wallet icon) */
+.solana-icon {
+    width: 50px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: brightness(0) saturate(100%) invert(94%) sepia(28%) saturate(6780%) hue-rotate(1deg) brightness(104%) contrast(104%);
+}
+
+
+/* Footer Styling */
+.footer {
+    background-color: #0d0d0d; /* Matches website background */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    position: relative; /* Can be fixed or static depending on your needs */
+    z-index: 1;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5); /* Slight shadow for separation */
+}
+
+.footer p {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: rgba(255, 255, 255, 0.7); /* Slight transparency for a subtle effect */
+}
+
+.footer p:hover {
+    color: #ffeb3b; /* Changes to the same yellow as icons when hovered */
+}
+
+/* Connect Section Styling */
+#connect-section {
+    padding: 100px 0; /* Increase padding to create more breathing room */
+    text-align: center;
+    color: #fff;
+    position: relative;
+    background: none;
+}
+
+#connect-section h1 {
+    font-size: 64px;
+    font-family: 'Orbitron', sans-serif;
+    margin-top: -200px;
+    margin-bottom: 20px; /* Space between headline and paragraph */
+    color: #f50057;
+}
+
+#connect-section p {
+    font-size: 18px;
+    margin-bottom: 50px; /* Adjust margin for more space between text and buttons */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Social Links Container */
+.social-links-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Add space between each social link */
+    flex-wrap: wrap;
+    margin-top: 30px; /* Add top margin to space it from the paragraph */
+}
+
+/* Social Links Styling */
+.social-link {
+    font-size: 20px;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 0 20px rgba(245, 0, 87, 0.7); /* Adds glow effect */
+}
+
+.social-link:hover {
+    background-color: #f50057;
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 128, 171, 0.9);
+}
+
+/* Twitter Link Styling */
+.twitter-link i {
+    color: #1DA1F2; /* Twitter Blue */
+    font-size: 30px;
+}
+
+/* Telegram Link Styling */
+.telegram-link i {
+    color: #0088cc; /* Telegram Blue */
+    font-size: 30px;
+}
+
+/* Email Link Styling */
+.email-link i {
+    color: #ffeb3b; /* Yellow color for Email */
+    font-size: 30px; /* Adjust icon size */
+    margin-right: 10px; /* Adds space between the icon and text */
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Background overlay */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Background overlay */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 15px;
+    width: 80%; /* Increase width */
+    max-width: 1000px; /* Maximum width */
+    height: 80%; /* Increase height */
+    max-height: 90%; /* Maximum height */
+    position: relative;
+    box-shadow: 0 0 20px rgba(255, 0, 102, 0.4);
+    overflow: hidden;
+}
+
+/* Ensure iframe fills the modal content area */
+.modal-content iframe {
+    width: 100%; /* Full width of the modal */
+    height: 100%; /* Full height of the modal */
+    border-radius: 10px;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+}
+
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Input Fields */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+}
+
+/* Button Styling */
+.cta-button {
+    background-color: #f50057;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ff4081;
+}
+
+.cta-button:active {
+    transform: scale(0.98); /* Adds a click effect */
+}
+
+/* Ensure responsiveness on mobile */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+}

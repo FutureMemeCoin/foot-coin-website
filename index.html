@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foot Coin Project - The Future of Crypto</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js Library -->
+
+    <!-- Smooth Scrolling for Browsers -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 3D Particle Background -->
+    <div id="particle-background"></div>
+
+    <!-- Navigation Bar with Paw Print Icons -->
+    <nav class="navbar">
+        <ul>
+            <!-- Home Link -->
+            <li>
+                <a href="#home-section">
+                    <img src="FootPNG.png" alt="Home" class="nav-img">
+                    <br> <span class="nav-text">Home</span>
+                </a>
+            </li>
+            <!-- Tokenomics Link -->
+            <li>
+                <a href="#Tokenomics">
+                    <img src="FootPNG.png" alt="Tokenomics" class="nav-img">
+                    <br> <span class="nav-text">Tokenomics</span>
+                </a>
+            </li>
+            <!-- White Paper Link -->
+            <li>
+                <a href="#" id="whitepaper">
+                    <img src="FootPNG.png" alt="White Paper" class="nav-img">
+                   <br>  <span class="nav-text">White Paper</span>
+                </a>
+            </li>
+            <!-- How to Buy Link -->
+            <li>
+                <a href="#Buy">
+                    <img src="FootPNG.png" alt="Buy" class="nav-img">
+                 <br>   <span class="nav-text">How to Buy</span>
+                </a>
+            </li>
+            <!-- Community Link -->
+            <li>
+                <a href="#connect-section" target="_blank">
+                    <img src="FootPNG.png" alt="Twitter" class="nav-img">
+                   <br>  <span class="nav-text">Community</span>
+                </a>
+            </li>
+           
+           
+        </ul>
+    </nav>
+
+
+
+    <!-- Main Content - Home Section -->
+    <div class="main-content" id="home-section">
+        <h1 class="headline">Foot Coin: <span class="neon-text">The Future of Meme Coin</span></h1>
+        <p class="sub-text">The FOOT coin is the brainchild of a passionate group of IT professionals with years
+		of experience in the FinTech, hospitality and oil & gas industries. Our team consists of
+		experts in IT management, development, and Fintech, bringing a wealth of knowledge
+		to the world of blockchain and cryptocurrency. With a shared vision of innovation and
+		fun, we are committed to making FOOT coin the next big thing in the meme coin
+		universe, leveraging our professional skills to create a seamless, secure, and exciting
+		experience for the community. </p>
+        <a href="#Buy" class="cta-button neon-button">Buy Now</a>
+    </div>
+
+    <!-- Tokenomics Section -->
+    <div class="main-content" id="Tokenomics">
+        <h1 class="headline">Foot Dog Coin Tokenomics</h1>
+        <!-- Circle Diagram for Tokenomics -->
+        <div class="circle-chart-container">
+            <canvas id="tokenomics-chart"></canvas>
+            <div class="center-info">
+                <span class="total-supply">1B</span>
+                <p>Total Supply</p>
+            </div>
+        </div>
+        <!-- Tokenomics Details -->
+        <div class="tokenomics-details">
+            <ul>
+                <li><span class="dot liquidity"></span> Liquidity Burned: 80%</li>
+                <li><span class="dot team"></span> Team Allocation: 5%</li>
+                <li><span class="dot marketing"></span> Marketing: 5%</li>
+                <li><span class="dot airdrop"></span> Giveaway & Airdrop: 10%</li>
+            </ul>
+        </div>
+    </div>
+
+<!-- How to Buy Section -->
+<div class="main-content" id="Buy">
+    <h1 class="headline">How to Buy Foot Dog Coin</h1>
+<br><br><br><br><br>
+    <!-- Buy Steps Container -->
+    <div class="buy-steps-container">
+        <!-- Step 1: Create Wallet -->
+        <div class="buy-step">
+            <div class="icon">
+                <i class="fas fa-wallet"></i> <!-- Wallet Icon -->
+            </div>
+            <h3>How to Create a New Wallet</h3>
+            <p>Learn how to create a new wallet easily.</p>
+            <a href="https://phantom.app/learn/guides/how-to-create-a-new-wallet" target="_blank" class="buy-button">Create Wallet</a>
+        </div>
+
+        <!-- Step 2: Buy Solana -->
+				<!-- Step 2: Buy Solana -->
+		<div class="buy-step">
+			<div class="icon">
+				<img src="solana-sol-logo.png" alt="Solana Logo" class="solana-icon"> <!-- Solana Icon -->
+			</div>
+			<h3>How to Buy Solana</h3>
+			<p>Follow the steps to buy Solana (SOL).</p>
+			<a href="https://phantom.app/learn/crypto-101/where-and-how-to-buy-solana-SOL" target="_blank" class="buy-button">Buy Solana</a>
+		</div>
+
+
+        <!-- Step 3: Stay Tuned for Presale -->
+        <div class="buy-step">
+            <div class="icon">
+                <i class="fas fa-rocket"></i> <!-- Rocket Icon -->
+            </div>
+            <h3>Stay Tuned for Presale & Launch</h3>
+            <p>Exciting updates coming soon for the presale.</p>
+            <a href="#" class="buy-button">Stay Tuned</a>
+        </div>
+    </div>
+</div>
+
+
+
+		<!-- Connect with Us Section -->
+		<div class="main-content" id="connect-section">
+			<h1 class="headline">Connect with Us</h1>
+			<p class="sub-text">Stay in touch with Foot Coin through Twitter, Telegram, or send us an email. We’d love to hear from you!</p>
+			
+			<div class="social-links-container">
+				<!-- Twitter -->
+				<a href="https://x.com/FootCoinSol" target="_blank" class="social-link twitter-link">
+					<i class="fab fa-twitter"></i> Twitter
+				</a>
+				
+				<!-- Telegram -->
+				<a href="https://t.me/+9AbfkrKy6kM0NTA0" target="_blank" class="social-link telegram-link">
+					<i class="fab fa-telegram-plane"></i> Telegram
+				</a>
+						
+						<!-- Email Us Button -->
+		 <a href="#" id="email-us" class="social-link email-link">
+        <i class="fas fa-envelope"></i> Email Us
+    </a>
+
+		<!-- Email Us Form Modal -->
+		<div id="emailModal" class="modal" >
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h2>Contact Us</h2>
+				
+				<!-- Formspree form -->
+				<form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+					<label for="firstName">First Name:</label>
+					<input type="text" id="firstName" name="firstName" required>
+
+					<label for="lastName">Last Name:</label>
+					<input type="text" id="lastName" name="lastName" required>
+
+					<label for="subject">Subject:</label>
+					<input type="text" id="subject" name="subject" required>
+
+					<label for="message">Message:</label>
+					<textarea id="message" name="message" rows="5" required></textarea>
+
+					<!-- Hidden field for the email address to send the message to -->
+					<input type="hidden" name="_replyto" value="footcoin2024@gmail.com">
+
+					<button type="submit" class="cta-button">Send Email</button>
+				</form>
+			</div>
+		</div>
+
+					</div>
+				</div>
+
+    <!-- White Paper Modal -->
+   <!-- White Paper Modal -->
+<div id="whitePaperModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <iframe src="https://drive.google.com/file/d/13v41M_v9xNu8DsB_ZbRpx-EoUESKc1Rt/preview" frameborder="0" width="500%" height="500px"></iframe>
+    </div>
+</div>
+
+
+
+	<!-- Footer Section -->
+	<footer class="footer">
+		<p>© 2024 Foot Dog Coin. All Rights Reserved.</p>
+	</footer>
+
+    <script src="script.js"></script>
+
+    <!-- JavaScript for Smooth Scrolling Adjustment -->
+    <script>
+        // Adjust scrolling behavior to make sections align to the middle of the viewport
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                const offset = window.innerHeight / 2 - targetElement.offsetHeight / 2;
+
+                window.scrollTo({
+                    top: targetElement.offsetTop - offset,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Tokenomics Chart Data
+        const ctx = document.getElementById('tokenomics-chart').getContext('2d');
+        const tokenomicsChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Liquidity Burned', 'Team Allocation', 'Marketing', 'Giveaway & Airdrop'],
+                datasets: [{
+                    data: [80, 5, 5, 10],
+                    backgroundColor: ['#00ffcc', '#ff80ab', '#ff4081', '#ffeb3b'],
+                    hoverOffset: 4,
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                cutout: '75%',  // Creates the hole in the center
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                const label = context.label || '';
+                                const value = context.raw || '';
+                                return `${label}: ${value}%`;
+                            }
+                        },
+                        displayColors: false
+                    },
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
