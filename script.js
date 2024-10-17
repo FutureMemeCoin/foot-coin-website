@@ -44,3 +44,33 @@ window.addEventListener('click', function(event) {
         emailModal.style.display = 'none'; // Hide the email modal if clicking outside
     }
 });
+
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    var formData = new FormData(this); // Collect form data
+
+    fetch('https://formspree.io/f/mldeeavz', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(function(response) {
+        if (response.ok) {
+            document.getElementById('feedback').style.display = 'block';
+            document.getElementById('feedback').innerHTML = 'Your email has been sent successfully!';
+            document.getElementById('feedback').style.color = 'green';
+            document.getElementById('contactForm').reset(); // Clear the form fields
+        } else {
+            document.getElementById('feedback').style.display = 'block';
+            document.getElementById('feedback').innerHTML = 'Oops! Something went wrong.';
+            document.getElementById('feedback').style.color = 'red';
+        }
+    }).catch(function(error) {
+        document.getElementById('feedback').style.display = 'block';
+        document.getElementById('feedback').innerHTML = 'Error sending email. Please check your connection.';
+        document.getElementById('feedback').style.color = 'red';
+    });
+});
